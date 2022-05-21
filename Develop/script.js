@@ -22,7 +22,6 @@ function generatePassword() {
   
 
   var characterLength = window.prompt ("Choose between 8-128 characters");
-  console.log(characterLength);
   if (characterLength < 8 || characterLength > 128) {
    window.alert("You need to provide a valid answer. Please try again.");
   return generatePassword()
@@ -31,40 +30,58 @@ function generatePassword() {
   var confirmLowercase = window.confirm("Would you like lowercase characters?")
   var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
   
-  if (lowercase){
+  if (confirmLowercase){
     box = box + lowercase
+    console.log(confirmLowercase);
     console.log(box);
-  };
+  }
+  
+  else if(confirmLowercase) {
+    return false 
+  }
+  
 
-  console.log(lowercase);
 
   var confirmUppercase = window.confirm("Would you like uppercase characters?");
   var uppercase = ["A","B","C", "D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  console.log(uppercase);
-
-  if (uppercase){
+  
+  if (confirmUppercase){
     box = box + uppercase
     console.log(box);
-  };
+  }
+
+  else if(confirmUppercase) {
+    return false 
+  }
+
+  
 
   var confirmNumbers = window.confirm("Would you like number characters?");
   var numbers = ["1","2","3","4","5","6","7","8","9","0"]
-  console.log(numbers);
 
-  if (numbers){
+  if (confirmNumbers){
     box = box + numbers
     console.log(box);
-  };
+    return numbers
+  }
+
+  else if(confirmNumbers) {
+    return false 
+  }
 
 
   var confirmSpecialCharacters = window.confirm("Would you like special characters?");
   var specialCharacters = ["~","!","#","$","%","^","&","*"]
-  console.log(specialCharacters);
 
-  if (specialCharacters){
+  if (confirmSpecialCharacters){
     box = box + specialCharacters
     console.log(box);
-  };
+  }
+  else if(confirmSpecialCharacters) {
+    return false 
+  }
+
+
 
 
   if (!confirmLowercase && !confirmUppercase && !confirmNumbers && !confirmSpecialCharacters){
