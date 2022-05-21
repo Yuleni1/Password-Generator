@@ -19,9 +19,9 @@ function writePassword() {
 // Generate password function
 function generatePassword() {
   
-  var length = window.prompt ("Choose between 8-128 characters");
-  console.log(length);
-  if (length < 8 || length > 128) {
+  var characterLength = window.prompt ("Choose between 8-128 characters");
+  console.log(characterLength);
+  if (characterLength < 8 || characterLength > 128) {
    window.alert("You need to provide a valid answer. Please try again.");
   return generatePassword()
   }
@@ -48,9 +48,12 @@ function generatePassword() {
     return generatePassword()
   }
 
-  
+  if(confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecialCharacters){
+    var allCharacters = lowercase.concat(uppercase,numbers,specialCharacters,);
+    console.log(allCharacters);
+  }
 
-   return length;
+   return allCharacters;
 
 }
 
