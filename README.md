@@ -28,6 +28,13 @@ SO THAT I can create a strong password that provides greater security
 
 ## Concept
 
+The website generates radomized charaters suited to the users needs. 
+
+## Deployed Application
+
+https://yuleni1.github.io/Password-generator/
+![Password Generator](/Develop/Screenshot%202022-05-22%20204038.png)
+
 ## Technologies Required
 
 * HTML

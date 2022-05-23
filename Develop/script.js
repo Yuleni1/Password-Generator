@@ -16,6 +16,10 @@ function writePassword() {
 
 //passwordText will extract the value and assign it to the password
   passwordText.value = password;
+
+
+
+  
 }
 // Generate password function
 function generatePassword() {
@@ -95,18 +99,21 @@ function generatePassword() {
 
 //for loop section starts
 userSelections = []
+console.log("box;", box)
 var newBox = box.replace(/,/g, "")
-
+box = "";
 for (var i = 0; i < characterLength; i++){
 var randomChar = newBox [Math.floor(Math.random() * newBox.length)]
 console.log(newBox.length);
 userSelections.push(randomChar);
 };
- 
+
+
 return userSelections.join("");
+
 };
+
 //generate password function ends. 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
